@@ -19,7 +19,7 @@ const contacts: Contact[] = [
 const ContactMe = () => {
     return (
         <section className="container mx-auto py-8">
-            <p className="text-3xl font-bold text-white text-center">Contact me</p>
+            <p className="text-3xl font-bold text-white text-center">Contáctame</p>
             <div className="mt-14 flex justify-center items-center flex-wrap gap-4 lg:gap-6">
                 {contacts.map((contact, index) => (
                     <ContactCard key={index} text={contact.text} icon={contact.icon}/>

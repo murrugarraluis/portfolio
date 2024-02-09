@@ -3,6 +3,17 @@ import {ReactNode} from "react";
 type NavProps = {
     children: ReactNode;
 }
+
+interface Option {
+    name: string
+}
+
+const options: Option[] = [
+    {name: 'Sobre mi'},
+    {name: 'Skills'},
+    {name: 'Proyectos'},
+    {name: 'Contacto'},
+]
 const Nav: React.FC<NavProps> = ({children}) => {
     return (
         <div className="drawer container mx-auto">
@@ -19,12 +30,13 @@ const Nav: React.FC<NavProps> = ({children}) => {
                             </svg>
                         </label>
                     </div>
-                    <div className="flex-1 px-2 mx-2">Navbar Title</div>
+                    <div className="flex-1 px-2 mx-2">Luis Murrugarra</div>
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">
                             {/* Navbar menu content here */}
-                            <li><a>Navbar Item 1</a></li>
-                            <li><a>Navbar Item 2</a></li>
+                            {options.map((option) => (
+                                <li><a>{option.name}</a></li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -34,8 +46,9 @@ const Nav: React.FC<NavProps> = ({children}) => {
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200">
                     {/* Sidebar content here */}
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
+                    {options.map((option) => (
+                        <li><a>{option.name}</a></li>
+                    ))}
                 </ul>
             </div>
         </div>

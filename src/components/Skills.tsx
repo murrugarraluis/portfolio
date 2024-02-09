@@ -36,7 +36,7 @@ const skills = [
 const Skills = () => {
     return (
         <section className="container mx-auto py-8">
-            <p className="text-3xl font-bold text-white text-center">My Skills</p>
+            <p className="text-3xl font-bold text-white text-center">Skills</p>
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
                 {skills.map((skill, index) => (
                     <SkillCard key={index} name={skill.name} icon={skill.icon} />
